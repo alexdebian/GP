@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'gpproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gp_db',
-        'USER': 'gpuser',
-        'PASSWORD': 'gpuser1234',
-        'HOST': 'localhost',
+        'NAME': 'd7lktt1nnstt9n',
+        'USER': 'wiamuhpemlrmvf',
+        'PASSWORD': 'a1ba8b3a64a8fd4c7c53f896eaa9891adeefc017ac8afa1b7977c3b580eef3ee',
+        'HOST': 'ec2-54-247-189-141.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
