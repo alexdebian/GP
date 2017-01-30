@@ -1,1 +1,1 @@
-web: gunicorn gpgalery.wsgi --log-file -
+web: gunicorn gpproject.wsgi --log-file -
