@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+
+{% block title %}
+    <title>Other user's images</title>
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'upload_files' %}"><-- Go back to the galery page</a>
+    <br>
+    <br>
+    {% for photo in photos %}
+        <a href="{{ photo.imagefile.url }}">
+            <img class="img-thumbnail" src="{{ photo.imagefile.url }}" alt="{{ image.imagefile.name }}" width="140"></a>
+    {% endfor %}
+{% endblock %}

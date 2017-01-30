@@ -1,0 +1,150 @@
+{% extends 'home.html' %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+{% block panel %}
+    <div class="col-md-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Панель администрирования</div>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="/account/">Профиль</a></li>
+                </ul>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="col-md-5">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Персональные данные</h3></div>
+        <table class="table">
+            <tr>
+                <td>
+                    Фамилия
+                </td>
+                <td>
+                    {{ user.last_name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Имя
+                </td>
+                <td>
+                    {{ user.first_name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    E-mail
+                </td>
+                <td>
+                    {{ user.email }}
+                </td>
+            </tr>
+{#            <tr>#}
+{#                <td>#}
+{#                    Дата рождения#}
+{#                </td>#}
+{#                <td>#}
+{#                    {{ user.birthday }}#}
+{#                </td>#}
+{#            </tr>#}
+            <tr>
+                <td>
+                    Телефон
+                </td>
+                <td>
+                    {{ user.phone_number }}
+                </td>
+            </tr>
+{#            <tr>#}
+{#                <td>#}
+{#                    Пол#}
+{#                </td>#}
+{#                <td>#}
+{#                    {{ user.gender }}#}
+{#                </td>#}
+{#            </tr>#}
+            <tr>
+                <td>
+                    Страна
+                </td>
+                <td>
+                    {{ user.country }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Населенный пункт
+                </td>
+                <td>
+                    {{ user.city }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Улица
+                </td>
+                <td>
+                    {{ user.street }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Дом
+                </td>
+                <td>
+                    {{ user.house }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Квартира / Офис
+                </td>
+                <td>
+                    {{ user.apartment }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Индекс
+                </td>
+                <td>
+                    {{ user.index }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td align="right">
+                    <a href="{% url 'update' pk=user.id %}"><button class="btn btn-danger btn-xs" type="button" aria-haspopup="false">Изменить данные</button></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="panel panel-default">
+        <table class="table">
+            <tr>
+                <td>
+                    <h3 class="panel-title">Пароль</h3>
+                </td>
+                <td align="right">
+                    <a href="{% url 'password_change' %}"><button class="btn btn-danger btn-xs" type="button" aria-haspopup="false">Изменить пароль</button></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+<div class="col-md-3">
+</div>
+
+{% endblock %}

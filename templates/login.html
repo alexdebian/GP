@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+
+{% block title %}
+<title>Log in</title>
+{% endblock %}
+
+{% block content %}
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="enter your username" name="username">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="enter your password" name="password">
+            {% if login_error %}
+                <br>
+                <span class="text-danger">{{ login_error }}</span>
+                <br>
+            {% endif %}
+            <br>
+            <input class="btn btn-primary btn-sm" type="submit" value="Sign in" />
+            <a class="btn btn-primary btn-sm" href="/register/" role="button">Create an account</a>
+            <a href="{% url 'password_reset' %}"><button class="btn btn-danger btn-sm" type="button" aria-haspopup="false">Forgot your password?</button></a>
+        </div>
+    </form>
+{% endblock %}

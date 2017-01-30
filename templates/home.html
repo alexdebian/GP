@@ -1,0 +1,47 @@
+{% load static %}
+
+
+<!DOCTYPE  HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+    {% block title %}
+        <title>Home</title>
+    {% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-right">
+                <a class="btn btn-default navbar-btn" href="/">Home</a>
+                    {% if user.is_authenticated %}
+                        <a class="btn btn-default navbar-btn" href="/account/">Account</a>
+                        <a class="btn btn-default navbar-btn" href="/logout/">Log out <span class="badge">{{ user }}</span></a>
+                        {% if user.username == 'admin' %}
+                            <a class="btn btn-default navbar-btn" href="/admin/">Admin panel</a>
+                        {% endif %}
+                        &nbsp;
+                    {% else %}
+                        <a class="btn btn-default navbar-btn" href="/login/">Log in</a>
+                        <a class="btn btn-default navbar-btn" href="/register/">Create an account</a>
+                        &nbsp;
+                    {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    {% block panel %}
+    {% endblock %}
+
+    {% block content %}
+        {% if user.is_authenticated %}
+            <div class="h1" align="center">
+            <a href="/galery/">Войти в галерею</a></div>
+        {% endif %}
+    {% endblock %}
+
+</body>
+</html>
