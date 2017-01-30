@@ -25,7 +25,9 @@ SECRET_KEY = 'j(*h1bq@14lq)&=*4jdpj7kbw&%-r@l*5^u+z3tye+on19k4%x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'fierce-badlands-58823.herokuapp.com',
+]
 
 
 EMAIL_USE_TLS = True
